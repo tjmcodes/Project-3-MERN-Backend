@@ -1,10 +1,10 @@
 
 export default [
   {
-    "username": "nick",
-    "password": "nick31%aAhello",
-    "passwordConfirmation": "nick31%aAhello",
-    "email": "nick@nick.com",
-    "image": 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
+    "username": "laleh",
+    "password": "Whisperers4!",
+    "passwordConfirmation": "Whisperers4!",
+    "email": "whisperers@whisperers.com",
+    "image": "https://res.cloudinary.com/dy4gabnho/image/upload/v1655660650/pets/my_favorite/axjizpfu7eqzg0uqcigf.jpg",  
   }
 ]

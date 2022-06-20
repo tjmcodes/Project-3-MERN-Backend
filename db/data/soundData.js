@@ -5,9 +5,9 @@
 export default [
   {
     fileName: 'Bells',
-    sizeInBytes: 1,
+    sizeInBytes: 1, // this information is taken from cloudinary not user
     category: ['music'],
-    soundFile: 'https://res.cloudinary.com/tjmcodes/video/upload/v1655481830/sea.wav',
+    audioFile: 'https://res.cloudinary.com/tjmcodes/video/upload/v1655481830/sea.wav',
     hashtag: [ 'ambient', 'bells', 'electronica' ],
   }
 ]

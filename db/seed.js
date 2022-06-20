@@ -1,37 +1,27 @@
-// ? A file that will be used to 'seed' our database with initial data.
+// ! A program that will be used to 'seed' our database with initial data.
 import mongoose from 'mongoose'
-import Pokemon from '../models/pokemon.js'
-import User from '../models/user.js'
-import pokemonData from './data/data.js'
-import userData from './data/userData.js'
+// ! Import both the data AND the model
+import Sound from '../models/soundModel.js'
+import soundData from './data/soundData.js'
 import { connectToDb, disconnectDb } from './helpers.js'
 
 async function seed() {
+  // Connect to db
   await connectToDb()
-
-  mongoose.connection.db.dropDatabase()
-
-  console.log('Connected to the database! 🌱')
-
-  // ! Create my user(s) first
-  const users = await User.create(userData)
-  const nickUser = users[0]
-
-  // ! Add a user to each pokemon
-  const pokeWithUsers = pokemonData.map(pokemon => {
-    return { ...pokemon, user: nickUser }
-  })
-
-  // pokemonData.forEach(pokemon => {
-  //   pokemon.user = nickUser
-  // })
-
-  // ! Create the pokemon with users
-  const pokemon = await Pokemon.create(pokeWithUsers)
-  console.log(pokemon)
-
+  
+  // Clear the database
+  await mongoose.connection.db.dropDatabase()
+  
+  // ! 2) Celebrate we've connected
+  console.log('Connected to the MongoDB database! 🌱')
+  
+  // ! 3) Seed our data!
+  const sound = await Sound.create(soundData)
+  console.log(sound)
+  
+  // ! 4) Disconnect from the database
   await disconnectDb()
-  console.log('Goodbye 🌱')
+  console.log('Goodbye, I have disconnected from MongoDB 🌱')
 }
 
 seed()
