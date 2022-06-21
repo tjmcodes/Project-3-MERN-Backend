@@ -41,20 +41,41 @@ async function removeSoundById(req, res) {
     res.status(422).json({ message: "this sound id is an invalid format" })
   }
 }
+
+async function updateSound(req, res) {
+  try {
+    const soundById = req.params.soundId
+    const newSound = req.body
+
+    const soundToUpdate = await Sound.findById(soundById)
+
+    if (!soundToUpdate) return res.json({ message: "Sound not found" })
+
+    const updatedSound = await Sound.findByIdAndUpdate(soundById, newSound, { new: true })
+
+    res.status(201).json(updatedSound)
+  } catch (e) {
+    if (e.path === "_id") {
+      res.status(422).json({ message: "This sound ID is in an invalid format." })
+    } else {
+      res.status(422).json({ message: 'Sound has missing or invalid fields.' })
+    }
+  }
+}
+
+
+
 //! Universal 
 
 // Get all sound from a single user
 
 //! only by the OP 
-// Method to Delete by id
-// Delete all sounds which the user has posted 
 // Update a sound by id
-
-
 
 export default {
   getAllSounds,
   createSound,
   getSingleSound,
   removeSoundById,
+  updateSound,
 }

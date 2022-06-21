@@ -7,15 +7,16 @@ import commentController from "../controllers/commentController.js"
 
 const router = express.Router()
 
-router.route("/sounds")
+router.route("/all-sounds")
   .get(soundController.getAllSounds)
   .post(secureRoute, soundController.createSound)
 
-router.route("/sounds/:soundId")
+router.route("/all-sounds/:soundId")
   .get(soundController.getSingleSound)
   .delete(secureRoute, soundController.removeSoundById)
+  .put(secureRoute, soundController.updateSound)
 
-router.route("/sounds/:soundId/comments")
+router.route("/all-sounds/:soundId/comments")
   .post(secureRoute, commentController.createComment)
 
 router.route("/register")
@@ -32,6 +33,5 @@ export default router
 // Get all sound from a single user
 
 //! only by the OP 
-// Method to Delete by id
 // Delete all sounds which the user has posted 
 // Update a sound by id
