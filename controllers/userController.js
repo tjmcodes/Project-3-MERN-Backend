@@ -7,13 +7,14 @@ async function register(req, res) {
   try {
     // ! 6) password confirmation
     if (body.password !== body.passwordConfirmation) {
-      return res.status(422).json({ message: "Passwords do not match." })
+      return res.status(422).json({ message: "Passwords do not match., from userController" })
     }
     const user = await User.create(body)
     res.status(201).json(user)
+    console.log(user)
   } catch (err) {
     console.log(err)
-    res.status(422).json({ message: 'User has missing or invalid fields.' })
+    res.status(422).json({ message: 'User has missing or invalid fields., from userController' })
   }
 }
 
@@ -31,14 +32,14 @@ async function login(req, res) {
         { expiresIn: '24h' }
       )
       res.json({ 
-        message: "Login successful!", 
+        message: "Login successful!, from userController", 
         token, // ! Send back the token with the response. 
       })
     } else {
-      res.status(400).json({ message: "Login failed!" } )
+      res.status(400).json({ message: "Login failed!, from userController" } )
     }
   } catch (err) {
-    res.status(400).json({ message: "Login failed!" } )
+    res.status(400).json({ message: "Login failed!, from userController-2" } )
   }
 }
 

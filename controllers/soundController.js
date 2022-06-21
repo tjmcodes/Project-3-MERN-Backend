@@ -4,13 +4,14 @@
 import Sound from "../models/soundModel.js"
 
 async function getSound(req, res) {
-  const soundData = await Sound.find()
+  const soundData = await Sound.find().populate('user')
   res.json(soundData)
   console.log(soundData)
 }
 
 async function createSound(req, res) { 
   const newSound = req.body
+  newSound.user = req.currentUser
   const createdSound = await Sound.create(newSound)
   console.log(newSound)
   res.status(201).json(createdSound)
@@ -22,7 +23,6 @@ async function getSingleSound(req, res) {
   const sound = await Sound.findById(soundById)
   res.json(sound)
 }
-
 
 //! Universal 
 

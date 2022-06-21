@@ -17,7 +17,7 @@ const schema = new mongoose.Schema({
   password: { 
     type: String, 
     required: true ,
-    validate: (password) => /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password)
+    validate: (password) => /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password),
   },
   image: { type: String, required: false },
 })
