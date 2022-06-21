@@ -8,11 +8,12 @@ import commentController from "../controllers/commentController.js"
 const router = express.Router()
 
 router.route("/sounds")
-  .get(soundController.getSound)
+  .get(soundController.getAllSounds)
   .post(secureRoute, soundController.createSound)
 
 router.route("/sounds/:soundId")
   .get(soundController.getSingleSound)
+  .delete(secureRoute, soundController.removeSoundById)
 
 router.route("/sounds/:soundId/comments")
   .post(secureRoute, commentController.createComment)

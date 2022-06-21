@@ -3,7 +3,7 @@
 
 import Sound from "../models/soundModel.js"
 
-async function getSound(req, res) {
+async function getAllSounds(req, res) {
   const soundData = await Sound.find().populate('user')
   res.json(soundData)
   console.log(soundData)
@@ -24,6 +24,23 @@ async function getSingleSound(req, res) {
   res.json(sound)
 }
 
+async function removeSoundById(req, res) {
+  try {
+    const soundById = req.params.soundId
+    const user = req.currentUser
+    const soundToDelete = await Sound.findById(soundById)
+    if (!soundToDelete.user.equals(user._id)) {
+      return res.json({ message: "unauthorized" }) 
+    }
+    if (!soundToDelete) {
+      return res.json({ message: "sound not found" })
+    }
+    await Sound.findByIdAndDelete(soundById)
+    res.sendStatus(204) 
+  } catch (e) {
+    res.status(422).json({ message: "this sound id is an invalid format" })
+  }
+}
 //! Universal 
 
 // Get all sound from a single user
@@ -36,7 +53,8 @@ async function getSingleSound(req, res) {
 
 
 export default {
-  getSound,
+  getAllSounds,
   createSound,
   getSingleSound,
+  removeSoundById,
 }

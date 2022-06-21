@@ -18,14 +18,12 @@ async function startServer() {
   
     app.use(logger)
   
-    app.use(router)
-  
-    // ! Before I start listening on port 4000, I'm going to connect to MongoDB.
-    await connectToDb()
-  
     app.use('/api', router)
     // app.use("/api/files", fileRoute)
-  
+
+    // ! Before I start listening on port 4000, I'm going to connect to MongoDB.
+    await connectToDb()
+    
     app.listen(4000, () => console.log("Hello, world in express!"))
   } catch (e) {
     await disconnectDb()
