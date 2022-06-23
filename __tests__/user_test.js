@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import { expect } from 'chai'
-import { application } from 'express'
 import setup from './lib/setup.js'
 import tearDown from './lib/tearDown.js'
 
@@ -26,7 +25,7 @@ describe('Testing REGISTER', () => {
   // ! Registration and login tests.
   it('Should be able to register a new user', (done) => {
 
-    api.post('/register')
+    api.post('/api/register')
       // ! Here's you POST data..
       .send({
         "username": "luke",
@@ -45,7 +44,7 @@ describe('Testing REGISTER', () => {
 
   it('Should fail to register when fields are missing', (done) => {
 
-    api.post('/register')
+    api.post('/api/register')
       // ! Here's you POST data..
       .send({
         "username": "laleh",
@@ -59,7 +58,7 @@ describe('Testing REGISTER', () => {
   })
 
   it('Should be able to login a new user', (done) => {
-    api.post('/login')
+    api.post('/api/login')
       // ! Here's you POST data..
       .send({
         "password": "Whisperers4!",
