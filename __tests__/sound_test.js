@@ -6,7 +6,7 @@ import tearDown from './lib/tearDown.js'
 // * Mocha ☕️
 // ? This is a testing suite. It ties everything together.
 // ? 'describe' is a mocha keyword, to create suites of tests.
-describe('Testing GET /all-sounds', () => {
+describe('Testing GET /api/all-sounds', () => {
 
   // * Mocha
   // ? before each test we want to run some code to setup our environment.
@@ -25,7 +25,7 @@ describe('Testing GET /all-sounds', () => {
   // ! FINALLY WE WILL WRITE TESTS:
   it('should return a 200 response status code', (done) => {
     // ! api: supertest
-    api.get('/all-sounds')
+    api.get('/api/all-sounds')
       .end((err, res) => {
         // ! Chai: make an assertion
         expect(res.status).to.eq(200)
@@ -36,7 +36,7 @@ describe('Testing GET /all-sounds', () => {
 
   it('should return an array of 3 sounds', (done) => {
     // ! api: supertest
-    api.get('/all-sounds')
+    api.get('/api/all-sounds')
       .end((err, res) => {
         expect(res.body).to.be.an("array")
         expect(res.body.length).to.eq(3)
@@ -46,7 +46,7 @@ describe('Testing GET /all-sounds', () => {
 
 })
 
-describe('Testing GET /sounds/:soundId', () => {
+describe('Testing GET /api/sounds/:soundId', () => {
 
   beforeEach(done => {
     setup(done)
@@ -58,13 +58,13 @@ describe('Testing GET /sounds/:soundId', () => {
   it('should return a sound object', (done) => {
     
     // ! Getting all the sound, just so we can an ID for one.
-    api.get('/all-sounds')
+    api.get('/api/all-sounds')
       .end((err, res) => {
         expect(res.body).to.be.an("array")
         const soundId = res.body[0]._id
 
         // ! Getting a sound using that ID.
-        api.get(`/all-sounds/${soundId}`)
+        api.get(`/api/all-sounds/${soundId}`)
           .end((err, res) => {
             // ! Check if its an object.
             expect(res.body).to.be.an('object')
