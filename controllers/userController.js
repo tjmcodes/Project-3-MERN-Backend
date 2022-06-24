@@ -2,19 +2,23 @@ import User from '../models/user.js'
 import jwt from 'jsonwebtoken'
 import { secret } from '../config/environment.js'
 
-async function register(req, res) {
+async function register(req, res, next) {
   const body = req.body
   try {
     // ! 6) password confirmation
     if (body.password !== body.passwordConfirmation) {
-      return res.status(422).json({ message: "Passwords do not match., from userController" })
+      return res.status(422).json({
+        message: "Passwords do not match., from userController",
+        errors: {
+          passwordConfirmation: 'Passwords do not match',
+        },
+      })
     }
     const user = await User.create(body)
     res.status(201).json(user)
     console.log(user)
   } catch (err) {
-    console.log(err)
-    res.status(422).json({ message: 'User has missing or invalid fields., from userController' })
+    next(err)
   }
 }
 
@@ -32,14 +36,14 @@ async function login(req, res) {
         { expiresIn: '24h' }
       )
       res.json({ 
-        message: "Login successful!, from userController", 
+        message: "Login successful!", 
         token, // ! Send back the token with the response. 
       })
     } else {
-      res.status(400).json({ message: "Login failed!, from userController" } )
+      res.status(400).json({ message: "Login failed missing field!" } )
     }
   } catch (err) {
-    res.status(400).json({ message: "Login failed!, from userController-2" } )
+    res.status(400).json({ message: "Login failed!" } )
   }
 }
 

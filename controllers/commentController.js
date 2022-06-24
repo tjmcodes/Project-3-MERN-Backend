@@ -1,13 +1,12 @@
-// ! Controller just for comments.
 import Sound from '../models/soundModel.js'
 
 async function createComment(req, res) {
   try {
-    // ! We need to provide the pokemon ID we're commenting on.
+    //! We need to provide the pokemon ID we're commenting on.
     const soundById = req.params.soundId
-    // ! We also need to get the user/user ID for the user commenting.
+    //! We also need to get the user/user ID for the user commenting.
     const user = req.currentUser
-    // ! Grab the info from the request body.
+    //! Grab the info from the request body.
     const comment = req.body
     // ! Get the pokemon we're comment on.
     const sound = await Sound.findById(soundById)
