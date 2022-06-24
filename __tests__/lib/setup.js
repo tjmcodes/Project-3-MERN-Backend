@@ -44,8 +44,8 @@ export default async function setup(done) {
         user: users[0]._id,
       }
     ])
-  } catch (e) {
-    console.log(e)
+  } catch (err) {
+    console.log(err)
   }
   done()
 }

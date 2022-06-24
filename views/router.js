@@ -4,6 +4,7 @@ import express from "express"
 import soundController from "../controllers/soundController.js"
 import userController from "../controllers/UserController.js"
 import commentController from "../controllers/commentController.js"
+import soundUploadController from "../controllers/soundUploadController.js"
 
 const router = express.Router()
 
@@ -24,6 +25,10 @@ router.route("/register")
 
 router.route("/login")
   .post(userController.login)  
+
+router.route('/soundUpload')
+  .get(soundUploadController.getSound)
+  .post(soundUploadController.postSound)
 
 
 export default router

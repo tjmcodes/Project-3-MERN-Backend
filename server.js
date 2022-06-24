@@ -5,12 +5,14 @@ import router from "./views/router.js";
 import { connectToDb, disconnectDb } from "./db/helpers.js";
 import logger from "./middleware/logger.js";
 import mongoSanitize from "express-mongo-sanitize";
+//import errorHandler from "./middleware/errorHandler.js"
 
 // import fileRoute from "./views/files.js"
 const app = express();
 
 async function startServer() {
   try  {
+    await connectToDb()
     
     app.use(express.json())
   
@@ -19,13 +21,14 @@ async function startServer() {
     app.use(logger)
   
     app.use('/api', router)
+    //app.use(errorHandler)
     // app.use("/api/files", fileRoute)
 
     // ! Before I start listening on port 4000, I'm going to connect to MongoDB.
-    await connectToDb()
+  //  await connectToDb()
     
     app.listen(4000, () => console.log("Hello, world in express!"))
-  } catch (e) {
+  } catch (err) {
     await disconnectDb()
   }
 

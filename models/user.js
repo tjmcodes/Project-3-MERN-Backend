@@ -22,6 +22,8 @@ const schema = new mongoose.Schema({
   image: { type: String, required: false },
 })
 
+
+
 // ! Before we save to the database, I'm going to hash
 // ! the password, and save that instead.
 

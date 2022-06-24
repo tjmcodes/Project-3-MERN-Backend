@@ -24,7 +24,7 @@ async function createComment(req, res) {
     const savedSound = await sound.save()
     // ! Sending back the comment
     res.json(savedSound)
-  } catch (e) {
+  } catch (err) {
     res.json({ message: "There was a problem commenting" })
   }
 }
