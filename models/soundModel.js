@@ -13,14 +13,25 @@ const commentSchema = new mongoose.Schema({
 
 
 const soundSchema = new mongoose.Schema({
-  fileName: { type: String, required: true },
-  sizeInBytes: { type: Number, required: true },
-  category: { type: [String], required: true },
-  audioFile: { type: String, required: true },// do we need to import this from the files.js to allow users to upload from their own hard drive? },
+  fileName: { type: String, required: false },
+  caption: { type: String, required: false },
   hashtag: { type: [String], required: false },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  category: { type: String, required: false },
+  subCategory: { type: String, required: false },
+  url: { type: String, required: false },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: false },
+}, { // ! This is adding fields that mongoose supports for you. 
+  timestamps: true,
   comments: [commentSchema],
 })
+
+// 
+//   sizeInBytes: { type: Number, required: true },
+//   category: { type: [String], required: true },
+//   audioFile: { type: String, required: true },// do we need to import this from the files.js to allow users to upload from their own hard drive? },
+//   hashtag: { type: [String], required: false },
+//   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+//   comments: [commentSchema],
   
 export default mongoose.model('Sound', soundSchema)
 

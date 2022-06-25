@@ -4,15 +4,12 @@ import express from "express"
 import soundController from "../controllers/soundController.js"
 import userController from "../controllers/UserController.js"
 import commentController from "../controllers/commentController.js"
-import soundUploadController from "../controllers/soundUploadController.js"
 import hashtagController from "../controllers/hashtagController.js"
 const router = express.Router()
 
 router.route("/all-sounds")
   .get(soundController.getAllSounds)
-  // .post(secureRoute, soundController.createSound)
-  .get(soundUploadController.getSound)
-  .post(secureRoute, soundUploadController.postSound)
+  .post(secureRoute, soundController.createSound)
 
 router.route("/all-sounds/:soundId")
   .get(soundController.getSingleSound)
@@ -28,9 +25,6 @@ router.route("/register")
 router.route("/login")
   .post(userController.login)  
 
-router.route('/all-sounds/new-sounds')
-  .get(soundUploadController.getSound)
-  .post(soundUploadController.postSound)
 
 router.route('/hashtags')
   .get(hashtagController.getHashtag)
