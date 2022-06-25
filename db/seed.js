@@ -5,6 +5,8 @@ import User from '../models/user.js'
 import Sound from '../models/soundModel.js'
 import soundData from './data/soundData.js'
 import userData from '../db/data/userData.js'
+import hashtagData from './data/hashtagData.js'
+import Hashtag from '../models/hashtagModel.js'
 
 import { connectToDb, disconnectDb } from './helpers.js'
 
@@ -25,6 +27,9 @@ async function seed() {
     return { ...sound, user: lalehUser }
   })
   
+  const hashtag = await Hashtag.create(hashtagData)
+  console.log(hashtag)
+
   // ! 3) Seed our data!
   const sound = await Sound.create(soundWithUsers)
   console.log(sound)

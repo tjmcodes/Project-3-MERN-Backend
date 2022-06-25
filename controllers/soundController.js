@@ -76,6 +76,19 @@ async function updateSound(req, res) {
   }
 }
 
+async function getSoundsByHashtag(req, res) {
+  try {
+    const soundById = req.query.hashtag
+    console.log(soundById)
+    const sounds = await Sound.find( { hashtag: soundById } )
+    if (!sounds) return res.json({ message: "sound not found" })
+    res.json(sounds)
+  } catch (err) {
+    res.json({ message: "there was a problem getting this sound" }) 
+  }
+}
+//https://www.mongodb.com/docs/manual/tutorial/query-arrays/
+  
 
 
 //! Universal 
@@ -91,4 +104,5 @@ export default {
   getSingleSound,
   removeSoundById,
   updateSound,
+  getSoundsByHashtag,
 }

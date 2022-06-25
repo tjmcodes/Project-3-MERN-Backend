@@ -5,7 +5,7 @@ import soundController from "../controllers/soundController.js"
 import userController from "../controllers/UserController.js"
 import commentController from "../controllers/commentController.js"
 import soundUploadController from "../controllers/soundUploadController.js"
-
+import hashtagController from "../controllers/hashtagController.js"
 const router = express.Router()
 
 router.route("/all-sounds")
@@ -31,6 +31,13 @@ router.route("/login")
 router.route('/all-sounds/new-sounds')
   .get(soundUploadController.getSound)
   .post(soundUploadController.postSound)
+
+router.route('/hashtags')
+  .get(hashtagController.getHashtag)
+  //.post(hashtagController, createHashtag)
+
+router.route("/all-soundsbyhashtag")
+  .get(soundController.getSoundsByHashtag)
 
 
 export default router
