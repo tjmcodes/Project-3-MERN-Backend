@@ -13,17 +13,18 @@ async function getAllSounds(req, res) {
   }
 }
 
-async function createSound(req, res) { 
-  try {
-    const newSound = req.body
-    newSound.user = req.currentUser
-    const createdSound = await Sound.create(newSound)
-    console.log(newSound)
-    res.status(201).json(createdSound)
-  } catch (err) {
-    return res.status(422).json({ message: "sound has missing or invalid fields"})
-  }
-}
+// this has been moved out to soundUploadController
+// async function createSound(req, res) { 
+//   try {
+//     const newSound = req.body
+//     newSound.user = req.currentUser
+//     const createdSound = await Sound.create(newSound)
+//     console.log(newSound)
+//     res.status(201).json(createdSound)
+//   } catch (err) {
+//     return res.status(422).json({ message: "sound has missing or invalid fields"})
+//   }
+// }
 
 async function getSingleSound(req, res) { 
   try {
@@ -86,7 +87,7 @@ async function updateSound(req, res) {
 
 export default {
   getAllSounds,
-  createSound,
+  // createSound, // moved to soundUploadController
   getSingleSound,
   removeSoundById,
   updateSound,

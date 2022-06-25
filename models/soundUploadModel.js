@@ -3,10 +3,11 @@
 import mongoose from 'mongoose'
 
 const soundUploadSchema = new mongoose.Schema({
-  userId: { type: String, required: true },
-  caption: { type: String, required: true },
+  caption: { type: String, required: false },
+  hashtag: { type: [String], required: false },
+  category: { type: String, required: false },
   url: { type: String, required: true },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: false }, // this line needs to require user id
 })
   
 export default mongoose.model('SoundUpload', soundUploadSchema)

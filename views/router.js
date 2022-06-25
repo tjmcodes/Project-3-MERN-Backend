@@ -10,7 +10,9 @@ const router = express.Router()
 
 router.route("/all-sounds")
   .get(soundController.getAllSounds)
-  .post(secureRoute, soundController.createSound)
+  // .post(secureRoute, soundController.createSound)
+  .get(soundUploadController.getSound)
+  .post(secureRoute, soundUploadController.postSound)
 
 router.route("/all-sounds/:soundId")
   .get(soundController.getSingleSound)
@@ -26,7 +28,7 @@ router.route("/register")
 router.route("/login")
   .post(userController.login)  
 
-router.route('/soundUpload')
+router.route('/all-sounds/new-sounds')
   .get(soundUploadController.getSound)
   .post(soundUploadController.postSound)
 
