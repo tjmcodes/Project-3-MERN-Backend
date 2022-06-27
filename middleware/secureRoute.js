@@ -11,12 +11,7 @@ export default function secureRoute(req, res, next) {
     // If the token doesnt exist or dont start with "Bearer" send the message below.
       return res.status(401).json({ message: 'Unauthorized' })
     }
-  // } catch (err) {
-  //   return res.status(401).json({ message: "unauthorized" })
-  // }
-
-  
-  // try {
+    
     const token = rawToken.replace('Bearer ', '')
 
     jwt.verify(token, secret, async (err, payload) => {

@@ -1,6 +1,9 @@
 // ? This file will be our 'data model': which is a representation we use to interact more
 // ? easily with data stored in our database, and to constrain/validate that data.
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
+// import validator from "validator";
+import uniqueValidator from "mongoose-unique-validator";
+
 
 // ! Brand new schema for comments.
 const commentSchema = new mongoose.Schema({
@@ -18,20 +21,18 @@ const soundSchema = new mongoose.Schema({
   hashtag: { type: [String], required: false },
   category: { type: String, required: false },
   subCategory: { type: String, required: false },
-  url: { type: String, required: false },
+  url: { type: String, required: false }, 
+  // url: { type: String, validate: (VALUE) => validator.isURL(VALUE), required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: false },
+  comments: [commentSchema],
 }, { // ! This is adding fields that mongoose supports for you. 
   timestamps: true,
-  comments: [commentSchema],
+  // date: {
+  //   type: Date,
+  //   default: Date.now, required: false,
+  // },
 })
 
-// 
-//   sizeInBytes: { type: Number, required: true },
-//   category: { type: [String], required: true },
-//   audioFile: { type: String, required: true },// do we need to import this from the files.js to allow users to upload from their own hard drive? },
-//   hashtag: { type: [String], required: false },
-//   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-//   comments: [commentSchema],
-  
+soundSchema.plugin(uniqueValidator, { message: 'is already taken.' })  
 export default mongoose.model('Sound', soundSchema)
 

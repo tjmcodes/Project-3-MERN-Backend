@@ -46,7 +46,7 @@ describe('Testing GET /api/all-sounds', () => {
 
 })
 
-describe('Testing GET /api/sounds/:soundId', () => {
+describe('Testing GET /api/all-sounds/:soundId', () => {
 
   beforeEach(done => {
     setup(done)
@@ -61,7 +61,7 @@ describe('Testing GET /api/sounds/:soundId', () => {
     api.get('/api/all-sounds')
       .end((err, res) => {
         expect(res.body).to.be.an("array")
-        const soundId = res.body[0]._id
+        const soundId = res.body._id
 
         // ! Getting a sound using that ID.
         api.get(`/api/all-sounds/${soundId}`)
