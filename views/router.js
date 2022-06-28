@@ -26,9 +26,12 @@ router.route("/login")
   .post(userController.login)  
 
 
-router.route('/hashtags')
+router.route('/hashtags/all')
+  .get(hashtagController.getAllHashtags)
+
+router.route('/hashtags/all')
   .get(hashtagController.getHashtag)
-  //.post(hashtagController, createHashtag)
+  .post(hashtagController.createHashtag)
 
 router.route("/all-soundsbyhashtag")
   .get(soundController.getSoundsByHashtag)

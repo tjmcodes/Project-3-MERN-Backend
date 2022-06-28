@@ -11,7 +11,7 @@ const schema = new mongoose.Schema({
     required: [true, 'Enter a valid email address'], //
     unique: [true, 'That email address is already taken'], 
     lowercase: true,
-    validate: [validator.isEmail, 'Enter a valid email address'],
+    validate: (email) => validator.isEmail(email),
   },
   password: { 
     type: String, 
