@@ -24,7 +24,6 @@ async function startServer() {
     //app.use(errorHandler)
     // app.use("/api/files", fileRoute)
 
-    // ! Before I start listening on port 4000, I'm going to connect to MongoDB.
   //  await connectToDb()
     
     app.listen(4000, () => console.log("Hello, world in express!"))
@@ -38,7 +37,3 @@ startServer()
 
 export default app
 
-
-//! GIT TEST 3.0 (blockchain)
-
-// Laleh 

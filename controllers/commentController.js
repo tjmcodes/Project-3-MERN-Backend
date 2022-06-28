@@ -28,6 +28,7 @@ async function createComment(req, res) {
 
     res.json(savedSound)
   } catch (err) {
+    console.log(err)
     res.json({ message: "There was a problem commenting" })
   }
 }
