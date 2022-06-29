@@ -1,7 +1,3 @@
-// ? An array of objects, that we can use as our initial data.
-
-// ! do we need to import cloudinary here? To deal with the sizeInBytes etc
-
 export default [
   {
     fileName: 'bells 1',

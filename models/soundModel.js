@@ -1,11 +1,10 @@
-// ? This file will be our 'data model': which is a representation we use to interact more
-// ? easily with data stored in our database, and to constrain/validate that data.
+// This file will be our 'data model': which is a representation we use to interact more
+// easily with data stored in our database, and to constrain/validate that data.
 import mongoose from "mongoose";
 // import validator from "validator";
 import uniqueValidator from "mongoose-unique-validator";
 
-
-// ! Brand new schema for comments.
+// Comment Schema
 const commentSchema = new mongoose.Schema({
   content: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -14,7 +13,7 @@ const commentSchema = new mongoose.Schema({
 })
 
 
-
+// Main Sound Schema
 const soundSchema = new mongoose.Schema({
   fileName: { type: String, required: false },
   caption: { type: String, required: false },
@@ -25,7 +24,7 @@ const soundSchema = new mongoose.Schema({
   // url: { type: String, validate: (VALUE) => validator.isURL(VALUE), required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: false },
   comments: [commentSchema],
-}, { // ! This is adding fields that mongoose supports for you. 
+}, { 
   timestamps: true,
   // date: {
   //   type: Date,
