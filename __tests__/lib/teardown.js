@@ -1,9 +1,7 @@
 import Sound from '../../models/soundModel.js'
 import User from '../../models/user.js'
 
-// ! This removes the testdata when you're done.
-// ! So that your setup file guarantees that's the only data in the database
-// ! when an individual test runs.
+// This removes the testdata once you are finished. So when you run the tests, they are the only ones in the db. 
 export default async function tearDown(done) {
   await User.deleteMany()
   await Sound.deleteMany()

@@ -1,24 +1,27 @@
 import mongoose from 'mongoose'
-// ! Importing bcrypt, our hashing function
 import bcrypt from 'bcrypt'
-import uniqueValidator from 'mongoose-unique-validator' // ! 4) emails should be unique
-import mongooseHidden from 'mongoose-hidden' // ! 5) hidden fields
+import uniqueValidator from 'mongoose-unique-validator' 
+import mongooseHidden from 'mongoose-hidden'
 import validator from 'validator';
 
+
 const schema = new mongoose.Schema({
-  username: { type: String, required: true },
+  username: { 
+    type: String, 
+    required: [true, uniqueValidator.defaults.message = 'Please enter a valid {PATH}'] ,
+    minLength: [5, 'Username must be at least 5 characters long'],
+  },
   email: { 
     type: String, 
-    required: [true, 'Enter a valid email address'], //
+    required: [true, uniqueValidator.defaults.message = 'Please enter a valid {PATH}'] ,
     unique: [true, 'That email address is already taken'], 
     lowercase: true,
     validate: [validator.isEmail, 'Enter a valid email address'],
   },
   password: { 
     type: String, 
-    required: [true, 'Enter a valid password'], 
+    required: [true, 'Must enter a password'], 
     minLength: [8, 'Password must be at least 8 characters and include at least one letter, one number and one special character'],
-    // ! 7) minimum of 8 characters, at least one letter, one number and one special character
     validate: (password) => /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password),
   },
   image: { type: String, required: false, default: "https://res.cloudinary.com/dy4gabnho/image/upload/v1655660650/pets/my_favorite/axjizpfu7eqzg0uqcigf.jpg" },
@@ -26,28 +29,20 @@ const schema = new mongoose.Schema({
 
 
 
-// ! Before we save to the database, I'm going to hash
-// ! the password, and save that instead.
-
-// ! Schema, before you save, run this function (hashPw):
+// Function to hash and store the hashed password using the bcrypt libary 
 schema.pre('save', function hashPassword(next) {
-  // ! Hash the password with bcrypt
-  // ? this -> refers to the user (document) we're about to save
-  // ! First argument, the actual pw to hash
-  // ! Second argument, the salt to hash with (adds randomness to the hash)
   this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync())
-  // ! Tell mongoose we're finished hashing the pw
   next()
 })
 
-// ! Adding a little function to compare the two hashed passwords!
+// Function which compares the user entered password to the hashed one
 schema.methods.validatePassword = function validatePassword(password) {
-  // ! Compare the password you're checking, with the one in the database.
   return bcrypt.compareSync(password, this.password)
 }
 
-schema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true, _id: false } })) // ! 5) hidden fields
-schema.plugin(uniqueValidator) // ! 4) emails should be unique
+//Hiding the password for security on the frontend 
+schema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true, _id: false } })) 
+schema.plugin(uniqueValidator) 
 
 export default mongoose.model('User', schema)
 

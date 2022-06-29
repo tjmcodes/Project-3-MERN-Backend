@@ -13,9 +13,5 @@ export const dbURL = process.env.NODE_ENV === 'test' ?
 export const secret = 'thisformalhighwayremember'
 
 
-// const environment = process.env.NODE_ENV || 'development'
-
-// `mongodb://127.0.0.1:27017/soundUploaddb-${environment}`
-// export const port = 8000
 
 

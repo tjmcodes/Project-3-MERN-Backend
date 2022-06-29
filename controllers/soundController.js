@@ -1,8 +1,6 @@
-// ? The controller contains the code to work with our data and send it back to the user.
-// ? It's the part that can interact and manipulate our data. 
+// ? The controller contains the code to work with our data and send it back to the user interacts and manipulates the data.
 
 import Sound from "../models/soundModel.js"
-
 
 async function getAllSounds(req, res) {
   try {
@@ -14,7 +12,7 @@ async function getAllSounds(req, res) {
   }
 }
 
-// this has been moved out to soundUploadController
+
 async function createSound(req, res) { 
   try {
     const newSound = req.body
@@ -94,16 +92,10 @@ async function getSoundsByHashtag(req, res) {
 
 
 
-//! Universal 
-
-// Get all sound from a single user
-
-//! only by the OP 
-// Update a sound by id
 
 export default {
   getAllSounds,
-  createSound, // moved to soundUploadController
+  createSound, 
   getSingleSound,
   removeSoundById,
   updateSound,
