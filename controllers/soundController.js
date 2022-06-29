@@ -2,6 +2,7 @@
 
 import Sound from "../models/soundModel.js"
 
+//reference notes
 async function getAllSounds(req, res) {
   try {
     const soundData = await Sound.find().populate('user')
