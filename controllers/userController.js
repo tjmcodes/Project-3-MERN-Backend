@@ -1,7 +1,6 @@
 import User from '../models/user.js'
 import jwt from 'jsonwebtoken'
 import { secret } from '../config/environment.js'
-import User from "../models/user.js"
 
 async function register(req, res, next) {
   const body = req.body
