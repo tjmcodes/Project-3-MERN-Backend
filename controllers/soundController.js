@@ -3,6 +3,7 @@
 
 import Sound from "../models/soundModel.js"
 
+
 async function getAllSounds(req, res) {
   try {
     const soundData = await Sound.find().populate('user')
@@ -88,7 +89,9 @@ async function getSoundsByHashtag(req, res) {
   }
 }
 //https://www.mongodb.com/docs/manual/tutorial/query-arrays/
-  
+
+
+
 
 
 //! Universal 
