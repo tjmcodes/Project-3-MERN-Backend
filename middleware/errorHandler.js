@@ -2,7 +2,7 @@ export const notFound = 'notFound'
 export const validationError = 'ValidationError'
 export const castError = 'CastError'
 
-export default function errorHandler(err, _req, res, next) {
+export default function errorHandler(err, req, res, next) {
   console.log('🤖 An Error Happened', err.name, err.message)
   console.log(err)
 

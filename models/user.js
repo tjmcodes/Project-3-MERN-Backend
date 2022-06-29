@@ -5,18 +5,37 @@ import uniqueValidator from 'mongoose-unique-validator' // ! 4) emails should be
 import mongooseHidden from 'mongoose-hidden' // ! 5) hidden fields
 import validator from 'validator';
 
+
+// const schema = new mongoose.Schema({
+//   username: { type: String, required: true },
+//   email: { 
+//     type: String, 
+//     required: true, 
+//     unique: true,
+//     validate: (email) => validator.isEmail(email),
+//   },
+//   password: {
+//     type: String,
+//     required: true,
+//     validate: (password) => /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password),
+//   },
+// })
 const schema = new mongoose.Schema({
-  username: { type: String, required: true },
+  username: { 
+    type: String, 
+    required: [true, uniqueValidator.defaults.message = 'Please enter a valid {PATH}'] ,
+    minLength: [5, 'Username must be at least 5 characters long'],
+  },
   email: { 
     type: String, 
-    required: [true, 'Enter a valid email address'], //
+    required: [true, uniqueValidator.defaults.message = 'Please enter a valid {PATH}'] ,
     unique: [true, 'That email address is already taken'], 
     lowercase: true,
     validate: [validator.isEmail, 'Enter a valid email address'],
   },
   password: { 
     type: String, 
-    required: [true, 'Enter a valid password'], 
+    required: [true, 'Must enter a password'], 
     minLength: [8, 'Password must be at least 8 characters and include at least one letter, one number and one special character'],
     // ! 7) minimum of 8 characters, at least one letter, one number and one special character
     validate: (password) => /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password),
@@ -46,7 +65,7 @@ schema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password)
 }
 
-schema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true, _id: false } })) // ! 5) hidden fields
+schema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true, _id: true } })) // ! 5) hidden fields
 schema.plugin(uniqueValidator) // ! 4) emails should be unique
 
 export default mongoose.model('User', schema)
