@@ -12,7 +12,7 @@ async function createComment(req, res) {
     const comment = req.body
     console.log(comment)
   
-    const sound = await Sound.findById(soundById)
+    const sound = await Sound.findById(soundById).populate('comments.user')
     console.log(sound)
 
     if (!sound) {

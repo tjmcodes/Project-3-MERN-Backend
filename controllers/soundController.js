@@ -28,7 +28,7 @@ async function createSound(req, res) {
 async function getSingleSound(req, res) { 
   try {
     const soundById = req.params.soundId
-    const sound = await Sound.findById(soundById).populate('user')
+    const sound = await Sound.findById(soundById).populate('user').populate('comments.user')
     if (!sound) return res.json({ message: "sound not found" })
     res.json(sound)
   } catch (err) {
