@@ -6,6 +6,7 @@ export default [
     category: 'machines',
     subCategory: 'power drills',
     url: 'https://res.cloudinary.com/tjmcodes/video/upload/v1655481830/sea.wav',
+    image: 'https://i.imgur.com/xnUtYOd.jpg',
   },
   {
     fileName: 'bells 2',
@@ -14,6 +15,7 @@ export default [
     category: 'nature',
     subCategory: 'countryside',
     url: 'https://res.cloudinary.com/tjmcodes/video/upload/v1655481830/sea.wav',
+    image: 'https://i.imgur.com/xnUtYOd.jpg',
   },
   {
     fileName: 'bells 3',
@@ -22,5 +24,6 @@ export default [
     category: 'animals',
     subCategory: 'birds',
     url: 'https://res.cloudinary.com/tjmcodes/video/upload/v1655481830/sea.wav',
+    image: 'https://i.imgur.com/xnUtYOd.jpg',
   }
 ]

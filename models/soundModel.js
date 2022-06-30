@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 // import validator from "validator";
 import uniqueValidator from "mongoose-unique-validator";
 
+
 // Comment Schema
 const commentSchema = new mongoose.Schema({
   content: { type: String, required: true },
@@ -21,6 +22,7 @@ const soundSchema = new mongoose.Schema({
   category: { type: String, required: false },
   subCategory: { type: String, required: false },
   url: { type: String, required: false }, 
+  image: { type: String, required: false }, 
   // url: { type: String, validate: (VALUE) => validator.isURL(VALUE), required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: false },
   comments: [commentSchema],
