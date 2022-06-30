@@ -19,40 +19,11 @@ router.route("/all-sounds/:soundId")
 router.route("/all-sounds/:soundId/comments")
   .post(secureRoute, commentController.createComment)
 
-
-
-
-
-
-//* this is what im working on
 router.route("/all-users/profileList") 
   .get(userController.showAllUsers)
 
 router.route("/oneUser/:singleUserId") 
   .get(userController.showSingleUser)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 router.route("/register")

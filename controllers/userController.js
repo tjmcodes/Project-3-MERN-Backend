@@ -1,6 +1,7 @@
 import User from '../models/user.js'
 import jwt from 'jsonwebtoken'
 import { secret } from '../config/environment.js'
+import Sound from '../models/soundModel.js'
 
 async function register(req, res, next) {
   const body = req.body
@@ -51,7 +52,7 @@ async function login(req, res) {
 
 async function showAllUsers(req, res) {
   try {
-    const allProfiles = await User.find().populate('user')
+    const allProfiles = await User.find()
     res.json(allProfiles)
     console.log(allProfiles)
   } catch (err) {
@@ -64,10 +65,13 @@ async function showAllUsers(req, res) {
 async function showSingleUser(req, res) { 
   try {
     const profileById = req.params.singleUserId
-    const userId = await User.findById(profileById).populate('user')
+    console.log(profileById)
+    const userId = await Sound.find({ 'user': profileById })
+    console.log(userId)
     if (!userId) return res.json({ message: "ID not found" })
     res.json(userId)
   } catch (err) {
+    console.log(err)
     res.json({ message: "there was a problem getting this user's profile" }) 
   }
 }
