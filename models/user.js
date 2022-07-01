@@ -24,7 +24,7 @@ const schema = new mongoose.Schema({
     minLength: [8, 'Password must be at least 8 characters and include at least one letter, one number and one special character'],
     validate: (password) => /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password),
   },
-  image: { type: String, required: false, default: "https://res.cloudinary.com/dy4gabnho/image/upload/v1655660650/pets/my_favorite/axjizpfu7eqzg0uqcigf.jpg" },
+  image: { type: String, required: false, default: "https://res.cloudinary.com/tjmcodes/image/upload/v1656610419/my_found_sounds_pics/srywvdlgnsykvpdwnvuw.jpg" },
 })
 
 
