@@ -16,15 +16,15 @@ const commentSchema = new mongoose.Schema({
 
 // Main Sound Schema
 const soundSchema = new mongoose.Schema({
-  fileName: { type: String, required: false },
-  caption: { type: String, required: false },
-  hashtag: { type: [String], required: false },
-  category: { type: String, required: false },
-  subCategory: { type: String, required: false },
-  url: { type: String, required: false }, 
+  fileName: { type: String, required: true },
+  caption: { type: String, required: true },
+  hashtag: { type: [String], required: true },
+  category: { type: String, required: true },
+  subCategory: { type: String, required: true },
+  url: { type: String, required: true }, 
   image: { type: String, required: false }, 
   // url: { type: String, validate: (VALUE) => validator.isURL(VALUE), required: true },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: false },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [commentSchema],
 }, { 
   timestamps: true,
