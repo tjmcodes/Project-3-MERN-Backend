@@ -3,7 +3,7 @@ import Sound from '../models/soundModel.js'
 import soundData from './data/soundData.js'
 import userData from '../db/data/userData.js'
 import hashtagData from './data/hashtagData.js'
-import Hashtag from '../models/hashtagModel.js'
+//import Hashtag from '../models/hashtagModel.js'
 
 import { connectToDb, disconnectDb } from './helpers.js'
 
