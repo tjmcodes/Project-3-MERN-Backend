@@ -20,7 +20,7 @@ const soundSchema = new mongoose.Schema({
   caption: { type: String, required: true },
   hashtag: { type: [String], required: true },
   category: { type: String, required: true },
-  subCategory: { type: String, required: true },
+  subCategory: { type: String, required: false },
   url: { type: String, required: true }, 
   image: { type: String, required: false }, 
   // url: { type: String, validate: (VALUE) => validator.isURL(VALUE), required: true },

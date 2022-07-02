@@ -13,7 +13,7 @@ async function seed() {
   await mongoose.connection.db.dropDatabase()
   console.log('Connected to the MongoDB database! 🌱')
   const users = await User.create(userData)
-  const lalehUser = users[0]
+  const lalehUser = users[3]
   
   // Assigning the defualt user profile to the seeded Sounds 
   const soundWithUsers = soundData.map(sound => {
