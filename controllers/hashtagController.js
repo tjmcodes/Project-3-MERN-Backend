@@ -1,5 +1,5 @@
 
-import Hashtag from "../models/hashtagModel.js"
+import Hashtag from "../models/hashtagModel.Js"
 
 
 async function getHashtag(req, res) {
