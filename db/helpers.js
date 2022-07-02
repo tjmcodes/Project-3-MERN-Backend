@@ -6,5 +6,5 @@ export async function connectToDb() {
 }
 
 export async function disconnectDb() {
-  return mongoose.connect()
+  return mongoose.disconnect()
 }
