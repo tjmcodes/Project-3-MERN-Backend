@@ -6,6 +6,9 @@ import { connectToDb, disconnectDb } from "./db/helpers.js";
 import logger from "./middleware/logger.js";
 import mongoSanitize from "express-mongo-sanitize";
 import errorHandler from "./middleware/errorHandler.js";
+import cors from 'cors'
+import { port } from './config/environment.js'
+
 //import errorHandler from "./middleware/errorHandler.js"
 
 // import fileRoute from "./views/files.js"
@@ -21,6 +24,7 @@ async function startServer() {
     // Express provides you with middleware to deal with the (incoming) data (object) in the body of the request.
 
     app.use(express.json())
+    app.use(cors())
     app.use(express.urlencoded({
       extended: true,
     }))
@@ -37,7 +41,7 @@ async function startServer() {
     // ! Before I start listening on port 4000, I'm going to connect to MongoDB.
     await connectToDb()
     
-    app.listen(4000, () => console.log("Hello, world in express!"))
+    app.listen(port, () => console.log("Hello, world in express!"))
   } catch (err) {
     await disconnectDb()
   }

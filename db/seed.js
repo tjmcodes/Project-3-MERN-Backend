@@ -1,4 +1,3 @@
-import mongoose from 'mongoose'
 import User from '../models/user.js'
 import Sound from '../models/soundModel.js'
 import soundData from './data/soundData.js'
@@ -10,7 +9,10 @@ import { connectToDb, disconnectDb } from './helpers.js'
 
 async function seed() {
   await connectToDb()
-  await mongoose.connection.db.dropDatabase()
+  
+  await User.deleteMany()
+  await Sound.deleteMany()
+
   console.log('Connected to the MongoDB database! 🌱')
   const users = await User.create(userData)
   const lalehUser = users[3]

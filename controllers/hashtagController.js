@@ -8,9 +8,6 @@ async function getHashtag(req, res) {
     console.log(querys)
     const matching = await Hashtag.find({ "hashtag": { $regex: querys } } )
     console.log(matching)
-    // const querys = req.query
-    // console.log(querys)
-    //const matching = await Hashtag.find({ hashtag: querys })
     res.json(matching)
     
   } catch (err) {

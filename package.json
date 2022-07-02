@@ -4,8 +4,10 @@
   "description": "A style guide application for SEI",
   "main": "server.js",
   "scripts": {
-    "start": "npx nodemon server.js",
-    "test": "NODE_ENV=test mocha __tests__/*_test.js --require __tests__/helper.js --recursive --exit"
+    "start": "node server.js",
+    "test": "NODE_ENV=test mocha __tests__/*_test.js --require __tests__/helper.js --recursive --exit",
+    "dev": "npx nodemon server.js",
+    "seed": "node db/seed.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.30.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express-mongo-sanitize": "^2.2.0",
     "install": "^0.13.0",
