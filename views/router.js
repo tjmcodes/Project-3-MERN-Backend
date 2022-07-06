@@ -35,7 +35,7 @@ router.route("/login")
 
 router.route('/hashtags')
   .get(hashtagController.getHashtag)
-  //.post(hashtagController, createHashtag)
+  .post(hashtagController.createHashtag)
 
 router.route("/all-soundsbyhashtag")
   .get(soundController.getSoundsByHashtag)
