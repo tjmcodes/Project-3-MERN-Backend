@@ -66,7 +66,7 @@ async function showSingleUser(req, res) {
   try {
     const profileById = req.params.singleUserId
     console.log(profileById)
-    const userId = await Sound.find({ 'user': profileById })
+    const userId = await Sound.find({ 'user': profileById }).populate('user')
     console.log(userId)
     if (!userId) return res.json({ message: "ID not found" })
     res.json(userId)
