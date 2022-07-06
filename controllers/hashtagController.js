@@ -15,6 +15,19 @@ async function getHashtag(req, res) {
   }
 }
 
+
+async function createHashtag(req, res) { 
+  try {
+    const newHashtag = req.body
+    const createdHashtag = await Hashtag.create(newHashtag)
+    console.log(newHashtag)
+    res.status(201).json(createdHashtag)
+  } catch (err) {
+    console.log(err)
+    return res.status(422).json({ message: "sound has missing or invalid fields" })
+  }
+}
 export default {
   getHashtag,
+  createHashtag,
 }

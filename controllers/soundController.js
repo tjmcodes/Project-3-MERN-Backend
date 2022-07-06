@@ -79,7 +79,7 @@ async function getSoundsByHashtag(req, res) {
   try {
     const soundById = req.query.hashtag
     console.log(soundById)
-    const sounds = await Sound.find( { hashtag: soundById } )
+    const sounds = await Sound.find( { hashtag: soundById } ).populate('user')
     if (!sounds) return res.json({ message: "sound not found" })
     res.json(sounds)
   } catch (err) {
