@@ -43,12 +43,3 @@ router.route("/all-soundsbyhashtag")
 
 export default router
 
-
-// Routes to be added in future with controller 
-//! Universal 
-
-// Get all sound from a single user
-
-//! only by the OP 
-// Delete all sounds which the user has posted 
-// Update a sound by id

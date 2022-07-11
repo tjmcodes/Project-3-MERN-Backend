@@ -6,7 +6,6 @@ import Sound from '../models/soundModel.js'
 async function register(req, res, next) {
   const body = req.body
   try {
-    // ! 6) password confirmation
     if (body.password !== body.passwordConfirmation) {
       return res.status(422).json({
         message: "Passwords do not match., from userController",

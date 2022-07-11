@@ -9,19 +9,11 @@ import errorHandler from "./middleware/errorHandler.js";
 import cors from 'cors'
 import { port } from './config/environment.js'
 
-//import errorHandler from "./middleware/errorHandler.js"
 
-// import fileRoute from "./views/files.js"
 const app = express();
 
 async function startServer() {
   try  {
-    // await connectToDb()
- 
-    // You NEED express.json() and express.urlencoded() for POST and PUT requests, 
-    // both these requests you are sending data (in the form of some data object) to the server 
-    // and you are asking the server to accept or store that data (object), which is enclosed in the body (i.e. req.body) of that (POST or PUT) Request
-    // Express provides you with middleware to deal with the (incoming) data (object) in the body of the request.
 
     app.use(express.json())
     app.use(cors())
@@ -30,15 +22,12 @@ async function startServer() {
     }))
   
     app.use(mongoSanitize());
-  //a
     app.use(logger)
   
     app.use('/api', router)
 
-    app.use(errorHandler) // this is needed in order to add error messages
-    // app.use("/api/files", fileRoute)
+    app.use(errorHandler) 
 
-    // ! Before I start listening on port 4000, I'm going to connect to MongoDB.
     await connectToDb()
     
     app.listen(port, () => console.log("Hello, world in express!"))

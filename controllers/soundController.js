@@ -86,7 +86,6 @@ async function getSoundsByHashtag(req, res) {
     res.json({ message: "there was a problem getting this sound" }) 
   }
 }
-//https://www.mongodb.com/docs/manual/tutorial/query-arrays/
 
 
 
