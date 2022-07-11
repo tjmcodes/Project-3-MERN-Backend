@@ -54,17 +54,16 @@ describe('Testing GET /api/all-sounds/:soundId', () => {
 
   it('should return a sound object', (done) => {
     
-    // ! Getting all the sound, just so we can an ID for one.
     api.get('/api/all-sounds')
       .end((err, res) => {
         expect(res.body).to.be.an("array")
         const soundId = res.body._id
 
-        // ! Getting a sound using that ID.
+
         api.get(`/api/all-sounds/${soundId}`)
           .end((err, res) => {
             
-            // ! Check if its an object.
+            // Check if  object.
             expect(res.body).to.be.an('object')
             done()
           })
