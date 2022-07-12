@@ -16,6 +16,6 @@ export default [
     subCategory: '',
     url: 'https://res.cloudinary.com/tjmcodes/video/upload/v1657637819/my_found_sounds/j0btoaifmvmskeikmh3m.mp4',
     image: 'https://res.cloudinary.com/tjmcodes/video/upload/h_200,w_500,fl_waveform/v1657637819/my_found_sounds/j0btoaifmvmskeikmh3m.png',
-  },
+  }
 
 ]
