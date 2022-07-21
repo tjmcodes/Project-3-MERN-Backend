@@ -4,7 +4,7 @@
   </h2>
 </div>
 
-## Project 3 - Full-stack MERN-Backend / MERN-Frontend
+# Project 3 - Full-stack MERN-Backend / MERN-Frontend
 
 My Found Sounds is an application that allows registered users to upload and download sounds posted by other users. It utilises the MERN stack (MongoDB, Express, React, Node.js). 
 
@@ -28,7 +28,7 @@ Email - portfoliouser@myfoundsounds.com
 Password - Portfolio1!
 
 
-### Contents 
+## Contents 
 1. [Project Overview](#projectoverview)
 2. [API / CDN](#api)
 3. [Instructions to install](#instructions)
@@ -51,25 +51,25 @@ Password - Portfolio1!
 
 <div id='projectoverview'></div>
 
-### The Overview
+## The Overview
 Third project was completed by [Luke O'Brien](https://github.com/luke-o-brien), [Kazimierz Jankowski](https://github.com/donnysnarko), [Laleh Shahidi](https://github.com/Laleh-S) and myself in 50hours over the course of two weeks (part-time schedule.)
 
 <div id='api'></div>
 
-### APIs Used:
+## APIs Used:
 
 Cloudinary
 “Cloudinary provides a secure and comprehensive API for easily uploading media files from server-side code, directly from the browser or from a mobile application. You can either upload using Cloudinary's REST API or one of Cloudinary's client libraries (SDKs), which wrap the upload API and simplify integration with web sites and mobile applications. Once uploaded, you can manage your assets using the Admin API and automatically deliver them, applying smart optimizations and transformations.” Cloudinary Docs 2022
 
 <div id='instructions'></div>
 
-### Instructions to install
+## Instructions to install
 
 I recommend that you use the deployed version here but if you do want to run it locally you will need to sign up for an API key from the API provider listed above. I also assume that you have an up to date version of node, MongoDB, and NPM on your machine. Ensure mongo DB is running (start the `database mongod --dbpath ~/data/db`)
 
 <div id='code-installation'></div>
 
-### Code Installation:
+## Code Installation:
 Clone or download this repo and the MERN-Frontend (provide link here) repo then in your Terminal, run the following commands:
 BACKEND:
 Fork and clone this repository
@@ -92,7 +92,7 @@ Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
 
 <div id='tech-used'></div>
 
-### Technologies Used
+## Technologies Used
 
 **Server**: 
 + Node.js
@@ -126,7 +126,7 @@ Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
 
 <div id='project-brief'></div>
 
-### Project Brief
+## Project Brief
 - Work in a team, using git to code collaboratively.
 - Build a full-stack application by making your own backend and your own front-end
 - Use an Express API to serve your data from a Mongo database
@@ -140,11 +140,11 @@ Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
 ## APPROACH
 <div id='planning'></div>
 
-### Planning
+## Planning
 It was the first time working together, so to brainstorm, we discussed themes/interests that we liked and contributed ideas onto the Miro app. As a group we were able to agree very quickly on the idea for our app; an instagram/library app but with sounds rather than images. The next stage of planning was to establish what apps we would use to discuss what the app would look like.  
  
 <div id='whiteboarding'></div>
-### Whiteboarding
+## Whiteboarding
  
 We worked collaboratively to create a wireframe for our project using excalidraw. This allowed us to pitch ideas quickly for the group to decide on what will be implemented for MVP. 
  
@@ -168,7 +168,7 @@ The final version of the wireframe that was decided as a group:
  
 <div id='project-management'></div>
 
-### Project management
+## Project management
  
 Jira was a powerful tool to use in which we were able to organise Epics and Issues into two sprints. the first sprint, building the backend and the second for the frontend.
 
@@ -190,9 +190,9 @@ Challenge: It really needs everybody to use this to be truly effective as often 
 </br>
 </br> 
  
-<div id=’creating-the-backend'></div>
+<div id='creating-the-backend'></div>
 
-### Creating The Backend
+## Creating The Backend
 As previously mentioned, this was the first time working as a group. So we decided that we would build the backend together using LiveShare on Zoom and each of us would refer to our class notes. 
 
 Wins: This was a really useful exercise to do because I was able to learn how others approached the tasks. For instance, checking the indentation is correct and for consistency as well as reinforcing our learning by discussing what we are doing.  
@@ -244,9 +244,9 @@ schema.plugin(uniqueValidator)
 </br>
 </br>
  
-<div id=’feature-one'></div>
+<div id='feature-one'></div>
 
-### Feature One - Cloud Hosting Widget
+## Feature One - Cloud Hosting Widget
  
  
 “The Upload widget API reference details all the parameter options that you can use when configuring the Upload widget.” - [Cloudinary Docs 2022](https://cloudinary.com/documentation/upload_widget_reference)
@@ -292,9 +292,9 @@ This widget also proved useful for the users posting sounds, as the cloudinary s
 </br>
 </br>
 
-<div id=’feature-two'></div>
+<div id='feature-two'></div>
 
-### Feature Two - Categories and Subcategories
+## Feature Two - Categories and Subcategories
  
 Starting with creating a component for the categories and sub categories, this information needed to pass the props to the parent page in order to update the form data. However, the challenge I found was that I was not passing the props from the parent to the child component. 
 In the parent component, I had to put the categories into useState which returns a stateful value, and a function to update it. During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).
@@ -343,9 +343,9 @@ Then finally in the parent component, the form data will use the updated state t
 </br>
 </br>
  
-<div id=’wins'></div> 
+<div id='wins'></div> 
 
-### WINS: 
+## Wins
 Planning
 The planning and the preparation of the project was a huge win.  We were able to brainstorm our ideas and use the relevant productivity tools to capture everybody’s ideas. We agreed quite quickly to what we would all be working towards very early on, meaning that we could get on and start wireframing and provide some pseudo codes etc. 
  
@@ -357,9 +357,9 @@ Using feature branches and becoming more familiar with resolving merge conflicts
 </br>
 </br>
  
-<div id=’challenges'></div>
+<div id='challenges'></div>
 
-### CHALLENGES: 
+## Challenges
 
 Styling! Hindsight being 20-20 vision, the styling was rushed and as a result the css / scss was not truly implemented the way that we were hoping for. 
 By the time the group was building the frontend and we started to work independently, we started to fall behind schedule due to debugging issues etc. 
@@ -369,9 +369,9 @@ Everybody contributed by assigning themselves to roles / assignments and feature
 </br>
 </br> 
  
-<div id=’bugs'></div>
+<div id='bugs'></div>
  
-### BUGS:
+## Bugs
 Once the presentation was complete, paired programming was carried out to to fix the unresolved issues: 
  
 Registration > box / text too small. - 
@@ -398,9 +398,9 @@ password: Jasmin!22
 </br>
 </br>
 
-<div id=’future-improvements'></div>
+<div id='future-improvements'></div>
 
-### FUTURE IMPROVEMENTS:  
+## Future Improvements 
 We have plenty of wireframing and stretch goals that we would like to implement as a group: 
 Profile list to appear at the top of the landing page (recent users who have posted sounds)
 We have used Jira to log other stretch goals and hope that as a group we will continue to work on improving the app. 
@@ -412,9 +412,9 @@ We have used Jira to log other stretch goals and hope that as a group we will co
 </br>
 </br>
  
-<div id=’what-have-i-learned'></div> 
+<div id='what-have-i-learned'></div> 
  
-### WHAT HAVE I LEARNED?
+## What have I Learned?
  
 Despite all the planning, organisation, we were not able to resolve all the tickets in Jira. 
 We were very optimistic and ambitious with setting our MVP within the first week when the actual reality is that the MVP was just about realised for the deployment date! However, this was the first time we have all worked as a team to develop a MERN stack app, and will now have a Jira board with documented tickets that will enable us to refer to for future projects. I have learn to appreciate the importance of planning and preparing a project and how a lot of the work is really done at this stage. Moving forward, I will be implementing the project management tools more and UI tools to assist with realising a product and not to just start coding and referring to notes in my head. This was something I believed cost us a lot in this project, in particular reference to the styling. 
