@@ -46,13 +46,14 @@ Password - Portfolio1!
 15. [Bugs](#bugs)
 16. [Future Improvements](#future-improvements)
 17. [What have I learned?](#What-have-i-learned)
+18. [Authors](#authors)
 
 
 
 <div id='projectoverview'></div>
 
 ## The Overview
-Third project was completed by [Luke O'Brien](https://github.com/luke-o-brien), [Kazimierz Jankowski](https://github.com/donnysnarko), [Laleh Shahidi](https://github.com/Laleh-S) and myself in 50hours over the course of two weeks (part-time schedule.)
+Third project was completed by 4 people in 50hours over the course of two weeks (part-time schedule.)
 
 <div id='api'></div>
 
@@ -419,6 +420,16 @@ We have used Jira to log other stretch goals and hope that as a group we will co
 Despite all the planning, organisation, we were not able to resolve all the tickets in Jira. 
 We were very optimistic and ambitious with setting our MVP within the first week when the actual reality is that the MVP was just about realised for the deployment date! However, this was the first time we have all worked as a team to develop a MERN stack app, and will now have a Jira board with documented tickets that will enable us to refer to for future projects. I have learn to appreciate the importance of planning and preparing a project and how a lot of the work is really done at this stage. Moving forward, I will be implementing the project management tools more and UI tools to assist with realising a product and not to just start coding and referring to notes in my head. This was something I believed cost us a lot in this project, in particular reference to the styling. 
 
+
+---
+
+<div id='authors'></div>
+
+## Authors
+
+[Laleh Shahidi](https://github.com/Laleh-S)
+[Luke O'Brien](https://github.com/luke-o-brien)
+[Kazimierz Jankowski](https://github.com/donnysnarko)
 
 ---
 
