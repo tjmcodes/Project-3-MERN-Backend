@@ -388,12 +388,16 @@ Restyle
 Mobile responsiveness
 Expand on users card (how to differentiate between username with same names, add a short description)
  
-Deploy version 2 - https://myfoundsounds-v2.netlify.app/ 
+## Deploy version 2 - https://myfoundsounds-v2.netlify.app/ 
 
-Please feel free to log in using the following credentials:
-</br>
+### Login credentials
+<br/>
+
+Please feel free to use the below credentials to login when viewing the project
+<br/>
 
 email: jasmin@jasmin.com
+<br/>
 password: Jasmin!22
  
 </br>
