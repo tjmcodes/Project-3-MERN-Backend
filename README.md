@@ -73,22 +73,22 @@ I recommend that you use the deployed version here but if you do want to run it 
 Clone or download this repo and the MERN-Frontend (provide link here) repo then in your Terminal, run the following commands:
 BACKEND:
 Fork and clone this repository
-$ cd into the project directory.
-$ npm i to install dependencies.
-$ create .env file and paste your cloudinary key in
-$ If you would like three examples of sounds posted:  $ Node db/seed.js to fill the database with example data and users.
-$ start the back-end server using nodemon npm run develop
+- $ cd into the project directory.
+- $ npm i to install dependencies.
+- $ create .env file and paste your cloudinary key in
+- $ If you would like three examples of sounds posted:  $ Node db/seed.js to fill the database with example data and users.
+- $ start the back-end server using nodemon npm run develop
 
 
 FRONTEND:
 Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
-Fork and clone this repository
-$ cd into the frontend directory
-$ npm i to install dependencies.
-$ create .env file and paste your cloudinary key in
-$ mv example.env .env to rename file.
-$ cd .. To move back to the backend folder.
-$ npm run start Navigate to localhost:8000 in your browser (Chrome Recommended).
+- Fork and clone this repository
+- $ cd into the frontend directory
+- $ npm i to install dependencies.
+- $ create .env file and paste your cloudinary key in
+- $ mv example.env .env to rename file.
+- $ cd .. To move back to the backend folder.
+- $ npm run start Navigate to localhost:8000 in your browser (Chrome Recommended).
 
 <div id='tech-used'></div>
 
