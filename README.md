@@ -388,7 +388,7 @@ Restyle
 Mobile responsiveness
 Expand on users card (how to differentiate between username with same names, add a short description)
  
-## Deploy version 2 - https://myfoundsounds-v2.netlify.app/ 
+## Deployed Version 2 - https://myfoundsounds-v2.netlify.app/ 
 
 ### Login credentials
 <br/>
