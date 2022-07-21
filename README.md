@@ -27,11 +27,6 @@ Email - portfoliouser@myfoundsounds.com
 <br/>
 Password - Portfolio1!
 
-Please feel free to log in using the following credentials:
-
-email: jasmin@jasmin.com
-password: Jasmin!22
-
 
 ### Contents 
 1. [Project Overview](#projectoverview)
@@ -86,6 +81,7 @@ $ start the back-end server using nodemon npm run develop
 
 
 FRONTEND:
+Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
 Fork and clone this repository
 $ cd into the frontend directory
 $ npm i to install dependencies.
