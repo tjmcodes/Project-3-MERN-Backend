@@ -142,7 +142,7 @@ Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
 <div id='planning'></div>
 
 ## Planning
-It was the first time working together, so to brainstorm, we discussed themes/interests that we liked and contributed ideas onto the Miro app. As a group we were able to agree very quickly on the idea for our app; an instagram/library app but with sounds rather than images. The next stage of planning was to establish what apps we would use to discuss what the app would look like.  
+It was the first time working together, so to brainstorm, we discussed themes and personal interests that we liked and contributed ideas onto the Miro app. As a group we were able to agree very quickly on the idea for our app; an instagram/library app but with sounds rather than images. 
  
 <div id='whiteboarding'></div>
 ## Whiteboarding
@@ -154,7 +154,7 @@ We worked collaboratively to create a wireframe for our project using excalidraw
 </div>
  
  
-After ideas were being noted, I found myself not fully understanding what the user experience would be, so I started to work on this using Figma. I was able to propose what the user experience could be in order to start thinking about how we would implement the code. We found this a useful tool to refer to as we well as everybody pitch their ideas for enhancing the user experience. 
+After ideas were being noted, I found myself not fully understanding what the user experience would be. I was able to propose what the user experience could be by utilising Figma as part our toolset, in order to start thinking about how we would implement the code. We found this a useful tool to refer to as we well as everybody pitch their ideas for enhancing the user experience. 
  
 <div align="center">
   <a href="https://ibb.co/3B8dCPP"><img src="https://i.ibb.co/Fgf3Ddd/Project-3-figma.png" alt="Project-3-figma" border="0"></a>
@@ -171,7 +171,7 @@ The final version of the wireframe that was decided as a group:
 
 ## Project management
  
-Jira was a powerful tool to use in which we were able to organise Epics and Issues into two sprints. the first sprint, building the backend and the second for the frontend.
+Jira proved to be a powerful tool to use in which we were able to organise Epics and Issues into two sprints. The first sprint was for building the backend and the second for the frontend.
 
 </br>
 
@@ -179,8 +179,8 @@ Jira was a powerful tool to use in which we were able to organise Epics and Issu
   <a href="https://ibb.co/6tNcBQC"><img src="https://i.ibb.co/xg3KHZT/Project-3-Jira-overview.png" alt="Project-3-Jira-overview" border="0"></a>
 </div>
 
-Wins: Everbody could refer to this, with regards to resolving tickets, or updating with comments based on research on debugging issues. 
-Challenge: It really needs everybody to use this to be truly effective as often when there were tickets unresolved, it would only be natural for people to work on those tickets to meet the deadlines. Only to find that it had been worked on by another user who didn't resolve the issue. Once this was flagged in our group, people were utilising the tool and this proved to be particularly powerful when debugging.
+Wins: Everybody could refer to this, with regards to resolving tickets, or updating with comments based on research on debugging issues. 
+Challenge: It really needs everybody to use this to be truly effective as often when there are tickets unresolved, where people work on those tickets to meet the deadlines, often it would be the case that the issue has been worked on by another user who didn't resolve the issue in Jira. Once this was flagged in our group, people were utilising the tool and this proved to be particularly powerful when debugging.
 
 </br>
  
@@ -297,7 +297,7 @@ This widget also proved useful for the users posting sounds, as the cloudinary s
 
 ## Feature Two - Categories and Subcategories
  
-Starting with creating a component for the categories and sub categories, this information needed to pass the props to the parent page in order to update the form data. However, the challenge I found was that I was not passing the props from the parent to the child component. 
+Starting with creating a component for the categories and subcategories, this information needed to pass the props to the parent page in order to update the form data. However, the challenge I found was that I was not passing the props from the parent to the child component. 
 In the parent component, I had to put the categories into useState which returns a stateful value, and a function to update it. During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).
  
 ```js
@@ -375,18 +375,17 @@ Everybody contributed by assigning themselves to roles / assignments and feature
 ## Bugs
 Once the presentation was complete, paired programming was carried out to to fix the unresolved issues: 
  
-Registration > box / text too small. - 
-Circular dependency - feedback in console.log
-Styling - cards not finished. 
-Comments and console.logs() left in code. 
-Profile List not completed (list of all users) → this to be integrated at the top like instagram of users who have recently posted sounds. 
-String manipulation to return wave images of posted sounds
-Moment library to display correct time BST not GMT
-Page showing all profile users
-Styling
-Restyle
-Mobile responsiveness
-Expand on users card (how to differentiate between username with same names, add a short description)
+- Registration > box / text too small
+- Circular dependency - feedback in console.log
+- Styling - cards not finished
+- Comments and console.logs() left in code
+- Profile List not completed (list of all users) → to be integrated at the top like instagram of users who have recently posted sounds
+- String manipulation to return wave images of posted sounds
+- Moment library to display correct time BST not GMT
+- Page showing all profile users
+- Styling
+- Mobile responsiveness
+- Expand on users card (how to differentiate between username with same names, add a short description)
  
 ## Deployed Version 2 - https://myfoundsounds-v2.netlify.app/ 
 
@@ -431,9 +430,9 @@ We were very optimistic and ambitious with setting our MVP within the first week
 
 ## Authors
 
-[Laleh Shahidi](https://github.com/Laleh-S)
-[Luke O'Brien](https://github.com/luke-o-brien)
-[Kazimierz Jankowski](https://github.com/donnysnarko)
+- [Laleh Shahidi](https://github.com/Laleh-S)
+- [Luke O'Brien](https://github.com/luke-o-brien)
+- [Kazimierz Jankowski](https://github.com/donnysnarko)
 
 ---
 
