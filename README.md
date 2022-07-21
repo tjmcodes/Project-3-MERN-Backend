@@ -433,6 +433,7 @@ We were very optimistic and ambitious with setting our MVP within the first week
 - [Laleh Shahidi](https://github.com/Laleh-S)
 - [Luke O'Brien](https://github.com/luke-o-brien)
 - [Kazimierz Jankowski](https://github.com/donnysnarko)
+- [Teresa Morini](https://github.com/tjmcodes)
 
 ---
 
