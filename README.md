@@ -196,7 +196,8 @@ Challenge: It really needs everybody to use this to be truly effective as often 
 ## Creating The Backend
 As previously mentioned, this was the first time working as a group. So we decided that we would build the backend together using LiveShare on Zoom and each of us would refer to our class notes. 
 
-Wins: This was a really useful exercise to do because I was able to learn how others approached the tasks. For instance, checking the indentation is correct and for consistency as well as reinforcing our learning by discussing what we are doing./
+Wins: This was a really useful exercise to do because I was able to learn how others approached the tasks. For instance, checking the indentation is correct and for consistency as well as reinforcing our learning by discussing what we are doing.
+</br>
 Challenge: Unfortunately, the internet connection was not always stable for all users. As a result people would often be working on components that would be an alias and not the original working file. This often interrupted our workflow and would take longer than all individually working on a component and pushing. 
 
 We started by creating the core routes for the API, one of these being the sound endpoint and controllers. This was the backbone of the project and so we spent time working together to ensure that it was logically structured and that all of the required information was included in the Sound Model. 
