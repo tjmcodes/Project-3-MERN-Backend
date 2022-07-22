@@ -181,6 +181,7 @@ Jira proved to be a powerful tool to use in which we were able to organise Epics
 </div>
 
 Wins: Everybody could refer to this, with regards to resolving tickets, or updating with comments based on research on debugging issues. 
+</br>
 Challenge: It really needs everybody to use this to be truly effective as often when there are tickets unresolved, where people work on those tickets to meet the deadlines, often it would be the case that the issue has been worked on by another user who didn't resolve the issue in Jira. Once this was flagged in our group, people were utilising the tool and this proved to be particularly powerful when debugging.
 
 </br>
