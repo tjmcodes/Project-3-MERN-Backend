@@ -232,20 +232,22 @@ As a group we decided to look into Cloudinary which was recommended as a hosting
 We also spent time as a group working on the backend for user registration and login. We wanted to ensure that only users who were registered and logged in could perform certain functions therefore we placed these functions such as uploading sounds, deleting sounds and commenting within secure routes. The secure route was authenticated using a bearer token which was assigned to the user at login; this was implemented using the JsonWebToken library.
  
 ```js
-// Function to hash and store the hashed password using the bcrypt library 
-schema.pre('save', function hashPassword(next) {
-  this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync())
-  next()
-})
- 
-// Function which compares the user entered password to the hashed one
-schema.methods.validatePassword = function validatePassword(password) {
-  return bcrypt.compareSync(password, this.password)
-}
- 
-//Hiding the password for security on the frontend 
-schema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true, _id: false } })) 
-schema.plugin(uniqueValidator) 
+
+// function for login: 
+
+if (isValidPw) {
+
+      const token = jwt.sign(
+        { userId: user._id },
+        secret,
+        { expiresIn: '24h' }
+      )
+      res.json({ 
+        message: "Login successful!", 
+        token, // ! Send back the token with the response. 
+      })
+    } else {
+      res.status(400).json({ message: "Login failed missing field!" } )
 ```
 
 </br>
