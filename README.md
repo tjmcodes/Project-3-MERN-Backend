@@ -9,7 +9,7 @@
 My Found Sounds is an application that allows registered users to upload and download sounds posted by other users. It utilises the MERN stack (MongoDB, Express, React, Node.js). 
 
 <div align="center">
-<a href="https://ibb.co/RSRjCQD"><img src="https://i.ibb.co/X4cYzFC/My-Found-Sounds-Landing-Page.png" alt="My-Found-Sounds-Landing-Page" border="0"></a>
+ <a href="https://ibb.co/RSRjCQD"><img src="https://i.ibb.co/BP0ngTC/My-Found-Sounds-Landing-Page.png" alt="My Found Sounds - Landing Page" border="0"></a>
 </div>
 
 ### Link to live site: 
@@ -157,13 +157,13 @@ We worked collaboratively to create a wireframe for our project using excalidraw
 After ideas were being noted, I found myself not fully understanding what the user experience would be. I was able to propose what the user experience could be by utilising Figma as part our toolset, in order to start thinking about how we would implement the code. We found this a useful tool to refer to as we well as everybody pitch their ideas for enhancing the user experience. 
  
 <div align="center">
-  <a href="https://ibb.co/3B8dCPP"><img src="https://i.ibb.co/Fgf3Ddd/Project-3-figma.png" alt="Project-3-figma" border="0"></a>
+  <a href="https://ibb.co/3B8dCPP"><img src="https://i.ibb.co/kQrBSPP/Project-3-figma.png" alt="Project 3 figma" border="0"></a>
 </div>
  
 
 The final version of the wireframe that was decided as a group: 
 <div align="center">
- <a href="https://ibb.co/NWLv3Tm"><img src="https://i.ibb.co/bNr03b2/Project-3-final-wireframe.png" alt="Project-3-final-wireframe" border="0"></a>
+ <a href="https://ibb.co/NWLv3Tm"><img src="https://i.ibb.co/6D4MZX1/Project-3-final-wireframe.png" alt="Project 3 final wireframe" border="0"></a>
 </div>
  
  
@@ -176,7 +176,7 @@ Jira proved to be a powerful tool to use in which we were able to organise Epics
 </br>
 
 <div align="center">
-  <a href="https://ibb.co/6tNcBQC"><img src="https://i.ibb.co/xg3KHZT/Project-3-Jira-overview.png" alt="Project-3-Jira-overview" border="0"></a>
+  <a href="https://ibb.co/6tNcBQC"><img src="https://i.ibb.co/wQYZstm/Project-3-Jira-overview.png" alt="Project 3 Jira overview" border="0"></a>
 </div>
 
 Wins: Everybody could refer to this, with regards to resolving tickets, or updating with comments based on research on debugging issues. 
@@ -185,7 +185,7 @@ Challenge: It really needs everybody to use this to be truly effective as often 
 </br>
  
 <div align="center">
-  <a href="https://ibb.co/rkxPD3s"><img src="https://i.ibb.co/y06THpS/Project-3-comments-jira.png" alt="Project-3-comments-jira" border="0"></a>
+  <a href="https://ibb.co/rkxPD3s"><img src="https://i.ibb.co/qBNGTC5/Project-3-comments-jira.png" alt="Project 3 comments jira" border="0"></a>
 </div>
  
 </br>
@@ -222,7 +222,13 @@ const soundSchema = new mongoose.Schema({
 
 </br>
 
-We also discussed and planned how the cloudinary storage and upload of the users sound would fit into our model once it had been added at a later stage. 
+As a group we decided to look into Cloudinary which was recommended as a hosting site for storing images and sound files. After checking the documentation, we could see that raw, video and image files can be uploaded.  I enrolled onto the 'Introduction to Cloudinary for Node.js Developers' course which is aimed at developers who are relatively new to Cloudinary. This course enabled me to understand the principles behind using hosting sites and how to upload, manage and transform the digital content.
+
+<div align="center">
+  <a href="https://ibb.co/7RVd0fS"><img src="https://i.ibb.co/pRZBk71/Cloudinary-Certificate.jpg" alt="Cloudinary Certificate" border="0"></a>
+</div>
+
+
 We also spent time as a group working on the backend for user registration and login. We wanted to ensure that only users who were registered and logged in could perform certain functions therefore we placed these functions such as uploading sounds, deleting sounds and commenting within secure routes. The secure route was authenticated using a bearer token which was assigned to the user at login; this was implemented using the JsonWebToken library.
  
 ```js
