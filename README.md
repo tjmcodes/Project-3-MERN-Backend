@@ -145,6 +145,7 @@ Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
 It was the first time working together, so to brainstorm, we discussed themes and personal interests that we liked and contributed ideas onto the Miro app. As a group we were able to agree very quickly on the idea for our app; an instagram/library app but with sounds rather than images. 
  
 <div id='whiteboarding'></div>
+
 ## Whiteboarding
  
 We worked collaboratively to create a wireframe for our project using excalidraw. This allowed us to pitch ideas quickly for the group to decide on what will be implemented for MVP. 
