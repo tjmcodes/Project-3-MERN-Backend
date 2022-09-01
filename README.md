@@ -4,7 +4,7 @@
   </h2>
 </div>
 
-# Project 3 - Full-stack MERN-Backend / MERN-Frontend
+# Project 3 - Full-stack MERN-Backend (Frontend link [here](https://github.com/tjmcodes/Project-3-MERN-Frontend))
 
 My Found Sounds is an application that allows registered users to upload and download sounds posted by other users. It utilises the MERN stack (MongoDB, Express, React, Node.js). 
 
