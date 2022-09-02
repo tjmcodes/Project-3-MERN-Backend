@@ -129,7 +129,7 @@ Link to Frontend Repository https://github.com/tjmcodes/Project-3-MERN-Frontend
 
 ## Project Brief
 - Work in a team, using git to code collaboratively.
-- Build a full-stack application by making your own backend and your own front-end
+- Build a full-stack application by making your own backend and your own frontend
 - Use an Express API to serve your data from a Mongo database
 - Consume your API with a separate front-end built with React
 - Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models
